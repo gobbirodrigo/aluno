@@ -4,7 +4,7 @@ require_once 'Aluno.php';
 require_once 'ServiceDb.php';
 
 try{
-$conexão= new \PDO("mysql:host=localhost;dbname=alunos;","root","****");
+$conexão= new \PDO("mysql:host=localhost;dbname=alunos;","root","*****");
 
 }
  catch (\PDOException $e){
@@ -18,8 +18,8 @@ $conexão= new \PDO("mysql:host=localhost;dbname=alunos;","root","****");
  $serviceDb=new ServiceDb($conexão, $aluno);
  
  
-$acao=$_GET['acao'];
-$id=$_GET['id'];
+$acao = filter_input(INPUT_GET, 'acao');
+$id = filter_input(INPUT_GET, 'id');
  
  
 if(isset($_POST['inserir'])){
